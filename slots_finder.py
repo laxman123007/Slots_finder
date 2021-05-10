@@ -28,7 +28,7 @@ def find_slots():
         print('No Slots Available')
 
 
-schedule.every(15).minutes.do(find_slots)
+schedule.every(5).minutes.do(find_slots)
 
 while True:
     schedule.run_pending()
