@@ -7,7 +7,7 @@ from playsound import playsound
 
 """Run code at hr:00:00 eg 11:00:00, 11:15:00.... etc"""
 # Code Written by Laxman
-monday_date = '16-05-2021'
+monday_date = '17-05-2021'
 pin_codes = ['464001', '464551']
 
 
@@ -28,8 +28,9 @@ def find_slots():
                               session.get('available_capacity', 0)]
             print('Centers Available')
             if len(centers_age_18):
-                print('Slots Available for 18+')
+                print(f'Slots Available for 18+ on Pin Code : {pin_code}')
                 playsound('car_horn_alarm.mp3')
+                time.sleep(20)
             else:
                 print('No Slots Available for 18+')
         else:
