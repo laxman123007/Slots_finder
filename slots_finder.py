@@ -18,7 +18,11 @@ def find_slots():
     response = requests.get(f'https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByPin?pincode={pin_code}&date={monday_date}', headers=headers)
     data = json.loads(response.text)
     centers = data.get('centers', [])
-    print('Centers Available')
+    print(centers)
+    if len(centers):
+        centers_age_18 = [center for center in centers for session in center.get('sessions', []) if session.get('min_age_limit') == 18 and
+                          session.get('available_capacity', 0)]
+        print('Centers Available')
         if len(centers_age_18):
             print('Slots Available for 18+')
             playsound('car_horn_alarm.mp3')
