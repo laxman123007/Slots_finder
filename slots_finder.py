@@ -9,7 +9,7 @@ from playsound import playsound
 # Code Written by Laxman
 monday_date = '22-05-2021'
 pin_codes = ['411006', '411014'] # Add more pin codes if you want , '464551'
-#  '464661'
+#  '464661' , '411014',
 
 
 def find_slots():
@@ -17,10 +17,10 @@ def find_slots():
     print(f'Running at time: {datetime.now()}', end=' ')
     headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36"}
     for pin_code in pin_codes:
-        response = requests.get(
+        response_1 = requests.options(
             f'https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByPin?pincode={pin_code}&date={monday_date}',
             headers=headers)
-        response_1 = requests.options(
+        response = requests.get(
             f'https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByPin?pincode={pin_code}&date={monday_date}',
             headers=headers)
         data = json.loads(response.text)
