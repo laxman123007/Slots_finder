@@ -8,7 +8,7 @@ from playsound import playsound
 """Run code at hr:00:00 eg 11:00:00, 11:15:00.... etc"""
 # Code Written by Laxman
 monday_date = '17-05-2021'
-pin_codes = ['464001', '464551'] # Add more pin codes if you want , 
+pin_codes = ['411006', '411014'] # Add more pin codes if you want , '464551'
 #  '464661'
 
 
